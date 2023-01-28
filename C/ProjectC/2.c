@@ -43,15 +43,35 @@ int main(void) {
     
     // pyramid
     /*
-         *
-        ***
-       *****
-      *******
-     *********    
+         * 1
+        *** 3
+       ***** 5
+      ******* 7
+     ********* 9 
+     1층 1개 0 n + 0, 1 + 0
+     2층 3개 1 n + 1, 2 + 1
+     3층 5개 2 n + 2, 3 + 2
+     4층 7개 3 n + 3, 4 + 3
+     5층 9개 4 n + 4, 5 + 4
+     공백이 앞에 5개
+              4개
+              3개
+              2개
+              1개
     */
     int floor;
     printf("층 수 입력: ");
     scanf("%d", &floor);
+
+    for(int i=1; i<=floor; i++) {
+        for(int j=floor; j>i; j--) {
+            printf(" ");
+        }
+        for(int y=1; y<=i+(i-1); y++) {
+            printf("*");
+        }
+        printf("\n");
+    }
 
     return 0;
 }
